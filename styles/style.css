@@ -3,35 +3,29 @@ body {
   font-family: "Yanone Kaffeesatz";
   background-color: white;
   background-image: url(../img/background.png);
+  display: flex;
+  flex-direction: column;
 }
 
-header, footer{
+header {
   width: 100%;
   background-color: dimgrey;
   display: flex;
   font-size: x-large;
 }
-#footerSpan {
-  font-size: xx-large;
-  outline: 0;
-  text-decoration: none;
-  color: black;
-}
 
-.maincontentdivs {
+footer {
+  width: 100%;
   background-color: dimgrey;
-  max-width: 960px;
-  margin: auto;
-  margin-top: 20px;
-}
-
-form {
-  height: fit-content;
+  display: flex;
   font-size: x-large;
+  margin-top: 20px;
+  height: 100px
 }
 
 nav {
   margin:auto;
+  width: 960px;
   max-width:960px;
   margin-top: 20px;
   background-color: dimgrey;
@@ -44,11 +38,8 @@ nav a {
   padding: 1em;
   display: block;
   color: #000000;
-  border-right: 1px solid #575757;
-  border-left: 1px solid #575757;
-  border-width: medium;
-  background: dimgrey;
-  width: 120px;
+  background: #919191;
+  width: 200px;
   text-align: center;
 }
 
@@ -56,21 +47,87 @@ nav a:hover {
   background: #575757
 }
 
-form h2 {
-  margin: 0;
-  padding-bottom: 10px;
-  text-align: center;
-  border-bottom: 3px solid dimgrey;
-  margin-bottom: 10px;
+.maincontentdivs {
+  background-color: dimgrey;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 20px;
+  height: fit-content;
 }
 
-form {
+main h1 {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin: auto;
+}
+
+#links {
+  font-size: x-large;
+}
+
+#mainForm {
+  font-size: x-large;
+}
+
+#mainTable {
+  font-size: x-large;
+  padding-bottom: 15px;
+}
+
+#links ol {
+  padding-bottom: 15px;
+  margin: auto;
+}
+
+footer a{
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+
+ol li a{
+  outline: none;
+  text-decoration: none;
+}
+
+.maincontentdivs table {
+  margin: auto;
+  border: 5px solid #424242;
+  border-collapse: collapse;
+}
+.maincontentdivs table th {
+  font-weight: bold;
+  padding: 5px;
+  background: #efefef;
+  border: 3px solid #424242;
+}
+.maincontentdivs table td {
+  border: 3px solid #424242;
+  padding: 5px;
+}
+
+#mainForm form {
   margin: 0 auto;
-  width: 450px;
-  height: 710px;
   padding: 20px;
   text-align: center;
   background-color: #575757;
+  height: fit-content;
+  width: fit-content;
+}
+
+#mainForm form textarea {
+  resize: none;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+}
+
+#mainForm form select {
+  outline: none;
+  padding: 5px;
+  overflow-y: auto;
+  max-width: 100%;
 }
 
 .group {
@@ -98,17 +155,28 @@ select {
   margin-top: 5px;
 }
 
-ol li {
-  outline: 0;
-  text-decoration: none;
-  font-size: x-large;
-}
 
 #button {
-  margin-top: 25px;
+  margin: auto;
+  margin-top: 10px;
+  color: #616161;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
 }
 
+#button:hover {
+  background: rgba(255,255,255,.2);
+}
 
+#button:active {
+  background: white;
+}
 
 
 

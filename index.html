@@ -22,12 +22,13 @@
   </header>
   <nav>
     <a href="#links">Список ссылок</a>
-    <a href="#mainForm">Форма</a>
     <a href="#mainTable">Таблица</a>
+    <a href="#mainForm">Форма</a>
   </nav>
   <main>
-    <div class="maincontentdivs">
-      <ol style="margin: 10px" id="links">
+    <div class="maincontentdivs" id="links">
+      <h1>Список ссылок</h1>
+      <ol style="margin: 10px">
         <li><a href="http://example.com/">Абсолютная гиперссылка на главную страницу сайта example.com</a></li>
         <li><a href="https://example.com/">Абсолютная на главную сайта example.com в протоколе https</a></li>
         <li><a href="ftp://example.com/file.txt">Ссылка на файл на сервере FTP без авторизации</a></li>
@@ -64,13 +65,24 @@
       </ol>
     </div>
     <div class="maincontentdivs" id="mainTable">
+      <h1>Таблица</h1>
       <table>
-
+        <tr>
+          <th>Колонка 1</th>
+          <th>Колонка 2</th>
+        </tr>
+        <tr>
+          <td colspan="2">Ячейка 11 объединенная с 12</td>
+        </tr>
+        <tr>
+          <td>Ячейка 21</td>
+          <td>Ячейка 22</td>
+        </tr>
       </table>
     </div>
     <div class="maincontentdivs" id="mainForm">
+      <h1>Форма</h1>
       <form method="GET">
-        <h2>Форма</h2>
         <label>Имя<br>
           <input type="name" placeholder="Введите свое имя" name="name"/>
         </label><br>
@@ -97,7 +109,7 @@
         </select><br>
 
         <label>Биография<br>
-          <textarea placeholder="Напишите свою биографию" rows="8" cols="40" name="about" style="margin-top: 5px"></textarea><br>
+          <textarea placeholder="Напишите свою биографию" rows="9" cols="40" name="about" style="margin-top: 5px"></textarea><br>
         </label>
         <label><input type="checkbox" name="check">С контрактом ознакомлен(а)</label><br>
 
@@ -105,8 +117,8 @@
       </form>
     </div>
   </main>
-  <footer style="margin-top: 20px; height: 100px">
-    <a id="footerSpan" href="https://github.com/Dadassasin"  style="margin: auto"><span>&copy Фомин Тимофей</span></a>
+  <footer>
+    <a id="footerSpan" href="https://github.com/Dadassasin"  style="margin: auto"><h3>&copy Фомин Тимофей</h3></a>
   </footer>
 </body>
 </html>
