@@ -13,7 +13,7 @@
   <header>
     <div style="margin: auto; display: flex">
       <a href="index.html">
-        <img src="/img/logo.png" style="margin-right: 20px">
+        <img src="/img/logo.png" style="margin-right: 20px" alt="Логотип">
       </a>
       <h1 style="margin: auto;">
         NAME OF SITE
@@ -35,7 +35,7 @@
         <li><a href="ftp://login:password@example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
         <li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%81%D0%BA,_%D0%98%D0%BB%D0%BE%D0%BD">Фрагмент страницы некоторого сайта</a></li>
         <li><a href="#links">Фрагмент текущей страницы</a></li>
-        <li><a href=http://example.com/?a="name1"&b="name2">Ссылка с двумя параметрами в URL</a></li>
+        <li><a href="http://example.com/?a=name1&b=name2">Ссылка с двумя параметрами в URL</a></li>
         <li>Список ссылок основной навигации сайта с подписями title
           <ul>
             <li><a href="/index.html" title="Главная">Главная</a></li>
@@ -84,14 +84,14 @@
       <h1>Форма</h1>
       <form method="GET">
         <label>Имя<br>
-          <input type="name" placeholder="Введите свое имя" name="name"/>
+          <input placeholder="Введите свое имя" name="inputName"/>
         </label><br>
 
         <label>Email<br>
-          <input type="email" placeholder="Введите свой email" name="email">
+          <input type="email" placeholder="Введите свой email" name="inputEmail">
         </label><br>
 
-        <label>Дата рождения<br><input type="date" name="date"><br></label>
+        <label>Дата рождения<br><input type="date" name="inputDate"><br></label>
 
         <label>Пол</label><br>
         <label class="sex"><input type="radio" name="pol" value="М">М</label>
@@ -118,7 +118,7 @@
     </div>
   </main>
   <footer>
-    <a id="footerSpan" href="https://github.com/Dadassasin"  style="margin: auto"><h3>&copy Фомин Тимофей</h3></a>
+    <a id="footerSpan" href="https://github.com/Dadassasin"  style="margin: auto"><h3>&copy; Фомин Тимофей</h3></a>
   </footer>
 </body>
 </html>
