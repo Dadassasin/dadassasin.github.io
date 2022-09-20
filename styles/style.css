@@ -1,4 +1,62 @@
-h2 {
+body {
+  margin: 0;
+  font-family: "Yanone Kaffeesatz";
+  background-color: white;
+  background-image: url(../img/background.png);
+}
+
+header, footer{
+  width: 100%;
+  background-color: dimgrey;
+  display: flex;
+  font-size: x-large;
+}
+#footerSpan {
+  font-size: xx-large;
+  outline: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.maincontentdivs {
+  background-color: dimgrey;
+  max-width: 960px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+form {
+  height: fit-content;
+  font-size: x-large;
+}
+
+nav {
+  margin:auto;
+  max-width:960px;
+  margin-top: 20px;
+  background-color: dimgrey;
+  font-size: x-large;
+  display: flex;
+}
+
+nav a {
+  margin: auto;
+  padding: 1em;
+  display: block;
+  color: #000000;
+  border-right: 1px solid #575757;
+  border-left: 1px solid #575757;
+  border-width: medium;
+  background: dimgrey;
+  width: 120px;
+  text-align: center;
+}
+
+nav a:hover {
+  background: #575757
+}
+
+form h2 {
   margin: 0;
   padding-bottom: 10px;
   text-align: center;
@@ -8,15 +66,11 @@ h2 {
 
 form {
   margin: 0 auto;
-  background: darkgrey;
   width: 450px;
   height: 710px;
   padding: 20px;
   text-align: center;
-}
-
-textarea {
-  margin-top: 5px;
+  background-color: #575757;
 }
 
 .group {
@@ -44,16 +98,17 @@ select {
   margin-top: 5px;
 }
 
-ol {
-  font-size: larger;
+ol li {
+  outline: 0;
+  text-decoration: none;
+  font-size: x-large;
 }
 
 #button {
   margin-top: 25px;
 }
 
-header {
-  width: 100%;
-  background-color: dimgrey;
-  display: flex;
-}
+
+
+
+
