@@ -52,3 +52,8 @@ ol {
   margin-top: 25px;
 }
 
+header {
+  width: 100%;
+  background-color: dimgrey;
+  display: flex;
+}
