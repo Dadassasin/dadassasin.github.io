@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сайт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header style="width: 100%">
+  Сайт
+</header>
+<ol>
+  <li><a id="top" href="http://example.com/">Абсолютная гиперссылка на главную страницу сайта example.com</a></li>
+  <li><a href="https://example.com/">Абсолютная на главную сайта example.com в протоколе https</a></li>
+  <li><a href="ftp://example.com/file.txt">Ссылка на файл на сервере FTP без авторизации</a></li>
+  <li><a href="ftp://login:password@example.com/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%81%D0%BA,_%D0%98%D0%BB%D0%BE%D0%BD">Фрагмент страницы некоторого сайта</a></li>
+  <li><a href="#top">Фрагмент текущей страницы</a></li>
+  <li><a href=http://example.com/?a="name1"&b="name2">Ссылка с двумя параметрами в URL</a></li>
+  <li>Список ссылок основной навигации сайта с подписями title
+    <ul>
+      <li><a href="/index.html" title="Главная">Главная</a></li>
+      <li><a href="/faq.html" title="Часто задаваемые вопросы">Часто задаваемые вопросы</a></li>
+      <li><a href="/about.html" title="О нас">О нас</a></li>
+    </ul>
+  </li>
+  <li><a>Ссылка без href</a></li>
+  <li><a href="">Ссылка с пустым href</a></li>
+  <li><a href="http://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+  <li><!--noindex--><a href="http://example.com">Ссылка, по которой запрещен переход поисковикам</a><!--/noindex--></li>
+  <li><p>Контекстная <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0">ссылка</a> в тексте абзаца</p></li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BF%D0%B5%D1%80%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0"><img src="https://github.com/Dadassasin/site/blob/main/image.jpg?raw=true" width="560" height="60" alt="Ссылка в виде картинки"></a></li>
+  <li>Cсылки из прямоугольных и круглых областей картинки (HTML-тег map)<br>
+    <img src="https://github.com/Dadassasin/site/blob/main/map.jpg?raw=true" width="386" height="181" usemap="#map" alt="Cсылки из прямоугольных и круглых областей картинки">
+    <map name="map">
+      <area shape="circle" coords="90,90,66" href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3" alt="Круг">
+      <area shape="rect" coords="214,25,343,155" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82" alt="Квадрат">
+    </map>
+  </li>
+  <li><a href="/link1.html">Относительная на страницу в текущем каталоге</a></li>
+  <li><a href="/about/link2.html">Относительная на страницу в каталоге about</a></li>
+  <li><a href="../link3.html">Относительная на страницу в каталоге уровнем выше текущего</a></li>
+  <li><a href="../../link4.html">Относительная на страницу в каталоге двумя уровнями выше</a></li>
+  <li><a href="/index.html">Сокращенная на главную</a></li>
+  <li><a href="/link2.html">Сокращенная ссылка на внутреннюю</a></li>
+</ol>
+<form method="GET">
+  <h2>Форма</h2>
+  <label>Имя<br>
+    <input type="name" placeholder="Введите свое имя" name="name"/>
+  </label><br>
+
+  <label>Email<br>
+    <input type="email" placeholder="Введите свой email" name="email">
+  </label><br>
+
+  <label>Дата рождения<br><input type="date" name="date"><br></label>
+
+  <label>Пол</label><br>
+    <label class="sex"><input type="radio" name="pol" value="М">М</label>
+    <label class="sex"><input type="radio" name="pol" value="Ж">Ж</label><br>
+
+    <label>Количество конечностей</label><br>
+    <label class="limb"><input type="radio" name="limbs" value="2">2</label>
+    <label class="limb"><input type="radio" name="limbs" value="4">4</label><br>
+
+    <label>Сверхспособности</label><br>
+    <select multiple="multiple" name="superpowers">
+      <option>Бессмертие</option>
+      <option>Левитация</option>
+      <option>Прохождение сквозь стены</option>
+    </select><br>
+
+    <label>Биография<br>
+      <textarea placeholder="Напишите свою биографию" rows="8" cols="40" name="about"></textarea><br>
+    </label>
+    <label><input type="checkbox" name="check">С контрактом ознакомлен(а)</label><br>
+
+
+    <input type="submit" value="Отправить" id="button">
+</form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+h2 {
+  margin: 0;
+  padding-bottom: 10px;
+  text-align: center;
+  border-bottom: 3px solid dimgrey;
+  margin-bottom: 10px;
+}
+
+form {
+  margin: 0 auto;
+  background: darkgrey;
+  width: 450px;
+  height: 710px;
+  padding: 20px;
+  text-align: center;
+}
+
+textarea {
+  margin-top: 5px;
+}
+
+.group {
+  margin: auto;
+  padding: 5px;
+}
+
+input {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.limb {
+  margin-left: -5px;
+  margin-right: 10px;
+}
+
+.sex {
+  margin-left: -5px;
+  margin-right: 5px;
+}
+
+select {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+ol {
+  font-size: larger;
+}
+
+#button {
+  margin-top: 25px;
+}
+
