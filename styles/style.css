@@ -62,7 +62,7 @@ main h1 {
   margin: auto;
 }
 
-#links {
+#mainLinks {
   font-size: x-large;
 }
 
@@ -75,7 +75,7 @@ main h1 {
   padding-bottom: 15px;
 }
 
-#links ol {
+#mainLinks ol {
   padding-bottom: 15px;
   margin: auto;
 }
