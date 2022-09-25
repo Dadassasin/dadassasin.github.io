@@ -14,6 +14,12 @@ header {
   font-size: x-large;
 }
 
+#headDiv {
+
+  margin: auto;
+  display: flex
+}
+
 footer {
   width: 100%;
   background-color: dimgrey;
@@ -36,7 +42,6 @@ nav {
 nav a {
   margin: auto;
   padding: 1em;
-  display: block;
   color: #000000;
   background: #919191;
   width: 200px;
