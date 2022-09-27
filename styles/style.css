@@ -15,9 +15,7 @@ header {
 }
 
 #headDiv {
-
   margin: auto;
-  display: flex
 }
 
 footer {
@@ -30,13 +28,8 @@ footer {
 }
 
 nav {
-  margin:auto;
-  width: 960px;
-  max-width:960px;
-  margin-top: 20px;
-  background-color: dimgrey;
-  font-size: x-large;
   display: flex;
+  flex-direction: column;
 }
 
 nav a {
@@ -182,3 +175,11 @@ select {
 #button:active {
   background: white;
 }
+
+@media only screen and (min-width: 500px) {
+  nav {
+    display: flex;
+
+  }
+}
+
