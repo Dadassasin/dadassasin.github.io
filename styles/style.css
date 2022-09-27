@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: "Yanone Kaffeesatz";
   background-color: white;
-  background-image: url(../img/background.png);
+  background-image: url(../img/background.jpg);
   display: flex;
   flex-direction: column;
 }
