@@ -30,6 +30,8 @@ footer {
 nav {
   display: flex;
   flex-direction: column;
+  max-width: 960px;
+  margin: auto;
 }
 
 nav a {
@@ -47,8 +49,8 @@ nav a:hover {
 
 .maincontentdivs {
   background-color: dimgrey;
-  max-width: 960px;
-  margin: auto;
+  max-width: 100%;
+
   margin-top: 20px;
   height: fit-content;
 }
@@ -176,10 +178,20 @@ select {
   background: white;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 609px) {
   nav {
     display: flex;
+    flex-direction: row;
+  }
 
+  nav a {
+    padding: 1em;
+  }
+
+  .maincontentdivs {
+    max-width: 960px;
+    margin: auto;
+    margin-top: 20px;
   }
 }
 
