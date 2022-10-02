@@ -39,9 +39,10 @@ nav a {
   padding: 1em;
   color: #000000;
   background: #919191;
-  width: 100%;
+  width: -webkit-fill-available;
   text-align: center;
 }
+
 
 nav a:hover {
   background: #575757
@@ -91,6 +92,16 @@ ol li a{
   text-decoration: none;
 }
 
+#linkImg {
+  max-width: 100%;
+  height: auto;
+}
+
+#mapImg {
+  max-width: 100%;
+  height: auto;
+}
+
 .maincontentdivs table {
   margin: auto;
   border: 5px solid #424242;
@@ -112,8 +123,8 @@ ol li a{
   padding: 20px;
   text-align: center;
   background-color: #575757;
-  height: fit-content;
-  width: fit-content;
+  max-width: fit-content;
+  height: auto;
 }
 
 #mainForm form textarea {
@@ -178,7 +189,7 @@ select {
   background: white;
 }
 
-@media only screen and (min-width: 609px) {
+@media only screen and (min-width: 500px) {
   nav {
     display: flex;
     flex-direction: row;
@@ -193,5 +204,5 @@ select {
     margin: auto;
     margin-top: 20px;
   }
-}
 
+}
