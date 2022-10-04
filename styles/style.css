@@ -137,8 +137,6 @@ ol li a{
 }
 
 #mainForm form textarea {
-  width:100%; 
-  max-width:300px;
   resize: none;
   padding:15px;
   border-radius:15px;
