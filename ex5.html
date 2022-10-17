@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WORK №5</title>
+    <link rel="stylesheet" href="styles/style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/img/icon.png">
+    <link rel="stylesheet" href="styles/style3.css">
+    <script>
+        function click1() {
+            let f1 = document.getElementsByName("price");
+            let f2 = document.getElementsByName("count");
+            let result = Number(f1[0].value) * Number(f2[0].value);
+            let r = document.getElementById("result");
+            r.innerHTML = "Цена: " + result;
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div id="main">
+            <h2 id="result">Цена: </h2>
+            <form>
+                <label>Цена<br><input name="price" type="text"><br></label>
+                <label>Количество<br><input name="count" type="text"><br></label>
+                <button onclick="return click1();">Рассчитать</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
