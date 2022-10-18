@@ -15,7 +15,12 @@
             let f2 = document.getElementsByName("count");
             let result = Number(f1[0].value) * Number(f2[0].value);
             let r = document.getElementById("result");
-            r.innerHTML = "Цена: " + result;
+            if (result % 10 == 1)
+                r.innerHTML = "Итоговая цена: " + result + "рубль";
+            if (result % 10 > 1 && result % 10 < 5)
+                r.innerHTML = "Итоговая цена: " + result + "рубля";
+            if (result % 10 == 0 || result % 10 > 4 && result % 10 <= 9)
+                r.innerHTML = "Итоговая цена: " + result + "рублей";
             return false;
         }
     </script>
@@ -25,7 +30,7 @@
         <div id="main">
             <h2 id="result">Итоговая цена: </h2>
             <form>
-                <label>Цена товара<br><input name="price" type="text"><br></label>
+                <label>Цена товара (руб.)<br><input name="price" type="text"><br></label>
                 <label>Количество<br><input name="count" type="text"><br></label>
                 <button onclick="return click1();">Рассчитать</button>
             </form>
