@@ -16,11 +16,11 @@
             let result = Number(f1[0].value) * Number(f2[0].value);
             let r = document.getElementById("result");
             if (result % 10 == 1)
-                r.innerHTML = "Итоговая цена: " + result + "рубль";
+                r.innerHTML = "Итоговая цена: " + result + " рубль";
             if (result % 10 > 1 && result % 10 < 5)
-                r.innerHTML = "Итоговая цена: " + result + "рубля";
+                r.innerHTML = "Итоговая цена: " + result + " рубля";
             if (result % 10 == 0 || result % 10 > 4 && result % 10 <= 9)
-                r.innerHTML = "Итоговая цена: " + result + "рублей";
+                r.innerHTML = "Итоговая цена: " + result + " рублей";
             return false;
         }
     </script>
