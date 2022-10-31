@@ -14,7 +14,6 @@
             let f1 = document.getElementsByName("price");
             let f2 = document.getElementsByName("count");
             let r = document.getElementById("result");
-<<<<<<< HEAD
             let reg = new RegExp(/^\d+$/);
             if (reg.test(f1[0].value) && reg.test(f2[0].value)) {
                 let result = Number(f1[0].value) * Number(f2[0].value);
@@ -27,20 +26,11 @@
                 return false;
             }
             r.innerHTML = "ПРОВЕРЬ СВОЙ ВВОД >:("
-=======
-            if (result % 10 == 1)
-                r.innerHTML = "Итоговая цена: " + result + " рубль";
-            if (result % 10 > 1 && result % 10 < 5)
-                r.innerHTML = "Итоговая цена: " + result + " рубля";
-            if (result % 10 == 0 || result % 10 > 4 && result % 10 <= 9)
-                r.innerHTML = "Итоговая цена: " + result + " рублей";
->>>>>>> fc4ea9b5dc539736b2369c0eaab693a895b522ff
             return false;
         }
     </script>
 </head>
 <body>
-<<<<<<< HEAD
 <main>
     <div id="main">
         <h2 id="result">Итоговая цена: </h2>
@@ -51,17 +41,5 @@
         </form>
     </div>
 </main>
-=======
-    <main>
-        <div id="main">
-            <h2 id="result">Итоговая цена: </h2>
-            <form>
-                <label>Цена товара (руб.)<br><input name="price" type="text"><br></label>
-                <label>Количество<br><input name="count" type="text"><br></label>
-                <button onclick="return click1();">Рассчитать</button>
-            </form>
-        </div>
-    </main>
->>>>>>> fc4ea9b5dc539736b2369c0eaab693a895b522ff
 </body>
 </html>
