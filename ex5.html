@@ -13,23 +13,33 @@
         function click1() {
             let f1 = document.getElementsByName("price");
             let f2 = document.getElementsByName("count");
-            let result = Number(f1[0].value) * Number(f2[0].value);
             let r = document.getElementById("result");
-            r.innerHTML = "Цена: " + result;
+            let reg = new RegExp(/^\d+$/);
+            if (reg.test(f1[0].value) && reg.test(f2[0].value)) {
+                let result = Number(f1[0].value) * Number(f2[0].value);
+                if (result % 10 === 1)
+                    r.innerHTML = "Итоговая цена: " + result + " рубль";
+                if (result % 10 > 1 && result % 10 < 5)
+                    r.innerHTML = "Итоговая цена: " + result + " рубля";
+                if (result % 10 === 0 || result % 10 > 4 && result % 10 <= 9)
+                    r.innerHTML = "Итоговая цена: " + result + " рублей";
+                return false;
+            }
+            r.innerHTML = "ПРОВЕРЬ СВОЙ ВВОД >:("
             return false;
         }
     </script>
 </head>
 <body>
-    <main>
-        <div id="main">
-            <h2 id="result">Цена: </h2>
-            <form>
-                <label>Цена<br><input name="price" type="text"><br></label>
-                <label>Количество<br><input name="count" type="text"><br></label>
-                <button onclick="return click1();">Рассчитать</button>
-            </form>
-        </div>
-    </main>
+<main>
+    <div id="main">
+        <h2 id="result">Итоговая цена: </h2>
+        <form>
+            <label>Цена товара (руб.)<br><input name="price" type="text"><br></label>
+            <label>Количество<br><input name="count" type="text"><br></label>
+            <button id="btn" onclick="return click1()">Рассчитать</button>
+        </form>
+    </div>
+</main>
 </body>
 </html>

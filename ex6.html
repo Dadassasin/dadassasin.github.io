@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WORK №5</title>
+  <link rel="stylesheet" href="styles/style3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="/img/icon.png">
+  <link rel="stylesheet" href="styles/style4.css">
+  <script>
+    function click1() {
+      let f1 = document.getElementsByName("price");
+      let f2 = document.getElementsByName("count");
+      let result = Number(f1[0].value) * Number(f2[0].value);
+      let r = document.getElementById("result");
+      r.innerHTML = "Цена: " + result;
+      return false;
+    }
+  </script>
+</head>
+<body>
+<main>
+  <div id="main">
+    <h2 id="result">Итоговая цена: </h2>
+    <form>
+      <label>Товар<br>
+        <select>
+          <option value="burger">Бургер со стейком из мраморной говядины</option>
+          <option value="shawarma">Шаурма</option>
+          <option value="sandwich">Сэндвич</option>
+        </select>
+      </label>
+      <div>
+        <label>Количество<br><input name="count" type="text"><br></label>
+      </div>
+      <div>
+        <label><input type="checkbox" name="check"><br></label>
+        <label><input type="checkbox" name="check"><br></label>
+        <label><input type="checkbox" name="check"><br></label>
+      </div>
+    </form>
+  </div>
+</main>
+</body>
+</html>
