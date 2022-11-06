@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 #mainTable {
-    order: 3;
+    background-color: dimgrey;
 }
 
 #mainForm form {
