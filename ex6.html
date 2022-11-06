@@ -9,16 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="/img/icon.png">
   <link rel="stylesheet" href="styles/style4.css">
-  <script>
-    function click1() {
-      let f1 = document.getElementsByName("price");
-      let f2 = document.getElementsByName("count");
-      let result = Number(f1[0].value) * Number(f2[0].value);
-      let r = document.getElementById("result");
-      r.innerHTML = "Цена: " + result;
-      return false;
-    }
-  </script>
 </head>
 <body>
 <main>
@@ -26,22 +16,30 @@
     <h2 id="result">Итоговая цена: </h2>
     <form>
       <label>Товар<br>
-        <select>
-          <option value="burger">Бургер со стейком из мраморной говядины</option>
-          <option value="shawarma">Шаурма</option>
-          <option value="sandwich">Сэндвич</option>
+        <select id="sel">
+          <option value="0">Бургер со стейком из мраморной говядины</option>
+          <option value="1">Шаурма</option>
+          <option value="2">Сэндвич</option>
         </select>
       </label>
       <div>
-        <label>Количество<br><input name="count" type="text"><br></label>
+        <label>Количество<br><input id="count" type="text" value="1"><br></label>
       </div>
-      <div>
-        <label><input type="checkbox" name="check"><br></label>
-        <label><input type="checkbox" name="check"><br></label>
-        <label><input type="checkbox" name="check"><br></label>
+      <div id="shaw" style="display: none">
+          <p style="margin-bottom: 10px; margin-top: 0;">Добавки: </p>
+        <label><input type="checkbox" name="check" value="0">Картошка фри (+30 руб.)<br></label>
+        <label><input type="checkbox" name="check" value="1">Сыр (+45 руб.)<br></label>
+        <label><input type="checkbox" name="check" value="2">Морковь по-корейски (+25 руб.)<br></label>
+      </div>
+      <div id="sandw" style="display: none">
+        <p style="margin-bottom: 10px; margin-top: 0;">Тип сендвича: </p>
+        <label><input type="radio" name="rad" value="0" checked="checked">Сендвич с тунцом (140 руб.)<br></label>
+        <label><input type="radio" name="rad" value="1">Сендвич с ветчиной (120 руб.)<br></label>
+        <label><input type="radio" name="rad" value="2">Сендвич с яичницой (130 руб.)<br></label>
       </div>
     </form>
   </div>
 </main>
+<script src="/javascript/ex6.js"></script>
 </body>
 </html>
