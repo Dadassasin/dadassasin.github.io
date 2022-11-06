@@ -1,6 +1,6 @@
 function click1() {
-    let f1 = document.getElementsByName("price");
-    let f2 = document.getElementsByName("count");
+    let f1 = document.getElementById("price");
+    let f2 = document.getElementById("count");
     let r = document.getElementById("result");
     let reg = new RegExp(/^\d+$/);
     if (reg.test(f1[0].value) && reg.test(f2[0].value)) {
