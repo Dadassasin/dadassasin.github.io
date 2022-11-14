@@ -1,38 +1,37 @@
-body{
-    background-color: #F5F5FF;
-}
-.wrapper{
-    padding: 70px 0;
-    overflow-x: hidden;
-}
+@import url("/libs/slick/slick-theme.css");
 
-.my-slider{
-    padding: 0 70px;
+html, body {
+    height: 100%;
+    margin: 0;
 }
-
-.slick-initialized .slick-slide{
-    height: 200px;
-    margin: 0 15px 0 0;
+body {
+    background-image: url("/img/background.png");
+}
+.wrapper {
+    height: 100%;
+}
+.center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-
-
-.slick-next, .slick-prev{
-    z-index: 5;
+.container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(145, 145, 145, 0.6);
 }
-.slick-next{
-    right: 15px;
+.slider{
+    padding-top: 20px;
+    width: 70%;
+    margin: auto;
 }
-.slick-prev{
-    left: 15px;
-}
-.slick-next:before, .slick-prev:before{
-    color: #000;
-    font-size: 26px;
-}
-.slick-dots li button::before {
-    font-size: 30px;
+.slick-initialized .slick-slide{
+    background-color: #b32532;
+    color: #FFF;
+    height: 300px;
+    margin: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
