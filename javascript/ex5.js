@@ -3,8 +3,8 @@ function click1() {
     let f2 = document.getElementById("count");
     let r = document.getElementById("result");
     let reg = new RegExp(/^\d+$/);
-    if (reg.test(f1[0].value) && reg.test(f2[0].value)) {
-        let result = Number(f1[0].value) * Number(f2[0].value);
+    if (reg.test(f1.value) && reg.test(f2.value)) {
+        let result = Number(f1.value) * Number(f2.value);
         if (result % 10 === 1)
             r.innerHTML = "Итоговая цена: " + result + " рубль";
         if (result % 10 > 1 && result % 10 < 5)
