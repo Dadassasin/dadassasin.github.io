@@ -17,32 +17,32 @@
 <body>
 <main class="d-flex align-items-center justify-content-center">
   <div class="center d-flex align-items-center justify-content-center w-100 h-25">
-    <button class="btn btn-secondary" id="activateFormButton" data-bs-toggle="modal" data-bs-target="#contactForm"><h2><strong>Открыть форму</strong></h2></button>
+    <button class="btn btn-secondary" id="activateFormButton" data-bs-toggle="modal" data-bs-target="#modalForm"><h2><strong>Открыть форму</strong></h2></button>
   </div>
-  <div class="modal fade" id="contactForm" tabindex="-1" role="dialog" aria-labelledby="#pop-upLabel" aria-hidden="true">
+  <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="#contactFormLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="pop-upLabel">Форма обратной связи</h4>
+          <h4 class="modal-title" id="contactFormLabel">Форма обратной связи</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex align-items-center justify-content-center">
-          <form id="modal-form">
+          <form id="contactForm">
             <div>
               <label for="nameInput"><h5>Имя</h5></label><br>
-              <input class="form-control" type="text" id="nameInput" placeholder="Введите ваше имя">
+              <input class="form-control" type="text" id="nameInput" placeholder="Введите ваше имя" name="name">
             </div>
             <div>
               <label for="emailInput"><h5>Email</h5></label><br>
-              <input class="form-control" type="email" id="emailInput" placeholder="Введите ваш адрес электронной почты">
+              <input class="form-control" type="email" id="emailInput" placeholder="Введите ваш адрес электронной почты" name="email">
             </div>
             <div>
               <label for="messageInput"><h5>Сообщение</h5></label><br>
-              <textarea class="form-control" id="messageInput" rows="10" style="resize: none"></textarea>
+              <textarea class="form-control" id="messageInput" rows="10" style="resize: none" name="message"></textarea>
             </div>
             <div>
-              <label class="form-check-label" for="check">
-                <input class="form-check-input" type="checkbox" id="check" style="margin-right: 5px">
+              <label class="form-check-label" for="checkbox">
+                <input class="form-check-input" type="checkbox" id="checkbox" name="checkbox" style="margin-right: 5px">
                 Я согласен с политикой обработки персональных данных
               </label>
             </div>

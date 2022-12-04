@@ -1,55 +1,58 @@
 window.addEventListener("DOMContentLoaded", function () {
-    let form = document.getElementById("contactForm");
-    let flag = false;
+    let form = document.getElementById("modalForm");
+    history.pushState("activeForm", null, "#contact-form");
+    history.back();
     form.addEventListener("show.bs.modal", function () {
-        history.pushState("activeForm", null, "#contact-form");
+        history.forward();
     });
     form.addEventListener("hide.bs.modal", function () {
         history.back();
     });
-    let formNameInput = document.getElementById("nameInput");
-    let formEmailInput = document.getElementById("emailInput");
-    let formMessageInput = document.getElementById("messageInput");
-    formNameInput.value = localStorage.getItem("nameInput");
-    formEmailInput.value = localStorage.getItem("emailInput");
-    formMessageInput.value = localStorage.getItem("messageInput");
-    formNameInput.addEventListener("input", function () {
-        localStorage.setItem("nameInput", formNameInput.value);
+    let formName = document.getElementById("nameInput");
+    let formEmail = document.getElementById("emailInput");
+    let formMessage = document.getElementById("messageInput");
+    formName.value = localStorage.getItem("nameInput");
+    formEmail.value = localStorage.getItem("emailInput");
+    formMessage.value = localStorage.getItem("messageInput");
+    formName.addEventListener("input", function () {
+        localStorage.setItem("nameInput", formName.value);
+        console.log(localStorage.getItem("nameInput"));
     });
-    formEmailInput.addEventListener("input", function () {
-        localStorage.setItem("emailInput", formEmailInput.value);
+    formEmail.addEventListener("input", function () {
+        localStorage.setItem("emailInput", formEmail.value);
+        console.log(localStorage.getItem("emailInput"));
     });
-    formMessageInput.addEventListener("input", function () {
-        localStorage.setItem("messageInput", formMessageInput.value);
+    formMessage.addEventListener("input", function () {
+        localStorage.setItem("messageInput", formMessage.value);
+        console.log(localStorage.getItem("messageInput"));
     });
     window.addEventListener("popstate", function () {
-        console.log(history.state);
         if (history.state === "activeForm")
-            $("#contactForm").modal("show");
+            $("#modalForm").modal("show");
         else if (history.state === null)
-            $("#contactForm").modal("hide");
+            $("#modalForm").modal("hide");
     });
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", event => {
         history.back();
-        let formData = new FormData(form);
-        fetch("https://formcarry.com/s/pjSn1OU3r", {
+        const data = new FormData(document.getElementById("contactForm"));
+        fetch("https://formcarry.com/s/pjSn1OU3r",{
             method: "POST",
-            body: formData
+            body: data
         })
             .then((result) => {
                 return result.text();
             })
-            .then((txt) => {
+            .then((txt)=>{
                 alert("Сообщение успешно отправлено!");
-                formNameInput.value = "";
-                formEmailInput.value = "";
-                formMessageInput.value = "";
-                localStorage.setItem("nameInput", formNameInput.value);
-                localStorage.setItem("emailInput", formEmailInput.value);
-                localStorage.setItem("messageInput", formMessageInput.value);
+                formName.value = "";
+                formEmail.value = "";
+                formMessage.value = "";
+                localStorage.setItem("nameInput", formName.value);
+                localStorage.setItem("emailInput", formEmail.value);
+                localStorage.setItem("messageInput", formMessage.value);
             })
-            .catch((error) => {
-                alert("Во время отправки сообщения произошла неизвестная ошибка. Попробуйте еще раз.");
+            .catch((error)=>{
+                alert("При отправке сообщения произошла неизвестная ошибка. Попробуйте еще раз.");
             });
         event.preventDefault();
     });
