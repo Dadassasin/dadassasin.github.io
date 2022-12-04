@@ -169,7 +169,7 @@ window.addEventListener("DOMContentLoaded", function () {
             body: formData
         })
             .then((result) => {
-                return res.text();
+                return result.text();
             })
             .then((txt) => {
                 alert("Сообщение успешно отправлено!");
