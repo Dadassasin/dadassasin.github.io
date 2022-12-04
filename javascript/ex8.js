@@ -57,61 +57,142 @@
 //         event.preventDefault();
 //     });
 // });
+
+
+// window.addEventListener("DOMContentLoaded", function () {
+//     const formModal = document.getElementById("modalForm");
+//     window.history.pushState("FORM", "form", "#FORM");
+//     history.back();
+//     formModal.addEventListener("show.bs.modal", event => {
+//         this.window.history.go(1);
+//     });
+//     var f = true;
+//     formModal.addEventListener("hide.bs.modal", event => {
+//         if (f){
+//             f = false;
+//             window.history.back();
+//             f = true;
+//         }
+//     });
+//     window.addEventListener("popstate", event => {
+//         if (f){
+//             f = false;
+//             if (location.hash == "#FORM"){
+//                 $("#modalForm").modal("show");
+//             }
+//             else {
+//                 $("#modalForm").modal("hide");
+//             }
+//             f = true;
+//         }
+//     });
+//
+//     var name = document.getElementById("nameInput");
+//     var email = document.getElementById("emailInput");
+//     var message = document.getElementById("messageInput");
+//     let ar = [[name,"nameInput"],[email,"emailInput"],[message,"messageInput"]];
+//     ar.forEach(el => {
+//         el[0].value = localStorage.getItem(el[1]);
+//         el[0].addEventListener("change",event =>{
+//             localStorage.setItem(el[1],el[0].value);
+//         });
+//     });
+//     var form = document.getElementById("contactForm");
+//     form.addEventListener("submit", event=>{
+//         history.back();
+//         const url = "https://formcarry.com/s/pjSn1OU3r";
+//         const data = new FormData(form);
+//         fetch(url,{method: "POST", body: data})
+//             .then((res)=>{return res.text();})
+//             .then((txt)=>{
+//                 alert("Данные были отправлены. Успех!");
+//                 ar.forEach(el => {
+//                     localStorage.setItem(el[1],"");
+//                     el[0].value = "";
+//                 });
+//             })
+//             .catch((err)=>{
+//                 alert("Данные не были отправлены. Попробуйте еще раз");
+//             });
+//         event.preventDefault();
+//     });
+// });
+
 window.addEventListener("DOMContentLoaded", function () {
-    const formModal = document.getElementById("modalForm");
-    window.history.pushState("FORM", "form", "#FORM");
+
+    // Добавляем в историю новый раздел и сразу возвращаемся обратно
+    history.pushState("activeForm", null, "#contact-form");
     history.back();
-    formModal.addEventListener("show.bs.modal", event => {
-        this.window.history.go(1);
+
+               // Находим по id все input тега form
+    let nameInput = document.getElementById("nameInput");
+    let emailInput = document.getElementById("emailInput");
+    let messageInput = document.getElementById("messageInput");
+
+        // Добавляем значения input в localStorage по вводу
+    nameInput.addEventListener("input", function () {
+        localStorage.setItem("nameInput", nameInput.value);
     });
-    var f = true;
-    formModal.addEventListener("hide.bs.modal", event => {
-        if (f){
-            f = false;
-            window.history.back();
-            f = true;
-        }
+    emailInput.addEventListener("input", function () {
+        localStorage.setItem("emailInput", emailInput.value);
     });
-    window.addEventListener("popstate", event => {
-        if (f){
-            f = false;
-            if (location.hash == "#FORM"){
-                $("#modalForm").modal("show");
-            }
-            else {
-                $("#modalForm").modal("hide");
-            }
-            f = true;
-        }
+    messageInput.addEventListener("input", function () {
+        localStorage.setItem("messageInput", messageInput.value);
     });
 
-    var name = document.getElementById("nameInput");
-    var email = document.getElementById("emailInput");
-    var message = document.getElementById("messageInput");
-    let ar = [[name,"nameInput"],[email,"emailInput"],[message,"messageInput"]];
-    ar.forEach(el => {
-        el[0].value = localStorage.getItem(el[1]);
-        el[0].addEventListener("change",event =>{
-            localStorage.setItem(el[1],el[0].value);
-        });
+        // Задаем для всех input значения из localStorage
+    nameInput.value = localStorage.getItem("nameInput");
+    emailInput.value = localStorage.getItem("emailInput");
+    messageInput.value = localStorage.getItem("messageInput");
+
+       // Находим по id кнопки открытия и закрытия формы и сам тег form
+    let openFormButton = document.getElementById("openFormButton");
+    let closeFormButton = document.getElementById("closeFormButton");
+    let contactForm = document.getElementById("contactForm");
+
+    // По клику на кнопку открытия движемся вперед по истории, по клику на кнопку закрытия движемся назад по истории и убираем флажок с чекбокса
+    openFormButton.addEventListener("click", function () {
+        history.forward();
     });
-    var form = document.getElementById("contactForm");
-    form.addEventListener("submit", event=>{
+    closeFormButton.addEventListener("click", function () {
         history.back();
-        const url = "https://formcarry.com/s/pjSn1OU3r";
-        const data = new FormData(form);
-        fetch(url,{method: "POST", body: data})
-            .then((res)=>{return res.text();})
-            .then((txt)=>{
-                alert("Данные были отправлены. Успех!");
-                ar.forEach(el => {
-                    localStorage.setItem(el[1],"");
-                    el[0].value = "";
-                });
+        document.getElementById("checkbox").checked = false;
+    });
+
+    // Отправляем данные формы на formcarry форму по событию submit тега form с is contactForm.
+    // Уходим назад по истории и предотвращаем событие submit, чтобы страница не перезагрузилась
+    contactForm.addEventListener("submit", function (event) {
+        history.back();
+        let formData = new FormData(contactForm);
+        fetch("https://formcarry.com/s/pjSn1OU3r", {
+            method: "POST",
+            body: formData
+        })
+            .then((result) => {
+                return res.text();
             })
-            .catch((err)=>{
-                alert("Данные не были отправлены. Попробуйте еще раз");
+            .then((txt) => {
+                alert("Сообщение успешно отправлено!");
+                nameInput.value = "";
+                emailInput.value = "";
+                messageInput.value = "";
+                localStorage.setItem("nameInput", nameInput.value);
+                localStorage.setItem("emailInput", emailInput.value);
+                localStorage.setItem("messageInput", messageInput.value);
+            })
+            .catch((error)=>{
+                alert("Сообщение не отправлено по неизвестной ошибке. Попробуйте еще раз.");
             });
         event.preventDefault();
+    });
+
+    // Проверяем текущее состояние истории. Если state = activeForm - открываем modalForm, если state = null - закрываем modalForm и убираем флажок с чекбокса
+    window.addEventListener("popstate", function () {
+        if (history.state === "activeForm")
+            $("#modalForm").modal("show");
+        else if (history.state === null) {
+            $("#modalForm").modal("hide");
+            document.getElementById("checkbox").checked = false;
+        }
     });
 });

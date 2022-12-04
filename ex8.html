@@ -17,14 +17,14 @@
 <body>
 <main class="d-flex align-items-center justify-content-center">
   <div class="center d-flex align-items-center justify-content-center w-100 h-25">
-    <button class="btn btn-secondary" id="activateFormButton" data-bs-toggle="modal" data-bs-target="#modalForm"><h2><strong>Открыть форму</strong></h2></button>
+    <button class="btn btn-secondary" id="openFormButton" data-bs-toggle="modal" data-bs-target="#modalForm"><h2><strong>Открыть форму</strong></h2></button>
   </div>
   <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="#contactFormLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title" id="contactFormLabel">Форма обратной связи</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" id="closeFormButton" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex align-items-center justify-content-center">
           <form id="contactForm">
