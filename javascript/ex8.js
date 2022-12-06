@@ -39,12 +39,18 @@ window.addEventListener("DOMContentLoaded", function () {
     // Отправляем данные формы на formcarry форму по событию submit тега form с is contactForm.
     // Уходим назад по истории и предотвращаем событие submit, чтобы страница не перезагрузилась
     contactForm.addEventListener("submit", function (event) {
-        history.back();
-        let formData = new FormData(contactForm);
-        fetch("https://formcarry.com/s/pjSn1OU3r", {
+        let check = document.getElementById("checkbox");
+        if (check.checked != true) {
+            alert("Необходимо согласие с политикой обработки персональных данных!");
+            event.preventDefault();
+        }
+        else {
+            history.back();
+            let formData = new FormData(contactForm);
+            fetch("https://formcarry.com/s/pjSn1OU3r", {
             method: "POST",
             body: formData
-        })
+            })
             .then((result) => {
                 return result.text();
             })
@@ -60,7 +66,8 @@ window.addEventListener("DOMContentLoaded", function () {
             .catch((error)=>{
                 alert("Сообщение не отправлено по неизвестной ошибке. Попробуйте еще раз.");
             });
-        event.preventDefault();
+            event.preventDefault();
+        }
     });
 
     // Проверяем текущее состояние истории. Если state = activeForm - открываем modalForm, если state = null - закрываем modalForm и убираем флажок с чекбокса
